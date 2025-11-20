@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Remover</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🖼 Background Remover</h1>
+      <p class="subtitle">Hapus latar belakang gambar dengan sekali klik</p>
+
+      <label class="file-upload">
+        <input type="file" id="imageInput" accept="image/*" />
+        Pilih Gambar
+      </label>
+      <button id="removeBtn" onclick="removeBackground()">🚀 Hapus Latar Belakang</button>
+      <button id="resetBtn" onclick="resetImages()">🔄 Reset</button>
+      <a id="downloadBtn" href="#" download="removed-background.png" class="hidden">⬇ Download</a>
+
+      <div id="bgColorContainer" class="hidden">
+        <label for="bgColor">🎨 Pilih Warna Latar:</label>
+        <input type="color" id="bgColor" value="#ffffff" />
+        <button onclick="applyBackgroundColor()">✔ Terapkan</button>
+      </div>
+
+      <div class="image-container">
+        <div class="card">
+          <h3>Gambar Asli</h3>
+          <img id="originalImage" src="/static/image/default.png" alt="Gambar asli" />
+          <p id="originalSize" class="file-info">Ukuran: - KB</p>
+        </div>
+        <div class="card">
+          <h3>Hasil</h3>
+          <img id="resultImage" src="/static/image/default.png" alt="Hasil" />
+          <p id="resultSize" class="file-info">Ukuran: - KB</p>
+        </div>
+      </div>
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
